@@ -37,3 +37,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+package-lock.json
+
+# npm install --save-dev  --unsafe-perm node-sass
