@@ -1,0 +1,6 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+node_modules
+package-lock.json
+
+# npm install --save-dev  --unsafe-perm node-sass
