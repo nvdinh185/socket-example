@@ -7,6 +7,14 @@ io.on('connection', socket => {
     socket.on("disconnect", () => {
         console.log(`Socket ${socket.id} disconnected!!!`);
     });
+
+    socket.on("Client-send-data", data => {
+        console.log(socket.id + " Vua gui " + data);
+        socket.emit("Server-send-data", data + "888");// chỉ gửi về cho client vừa emit lên
+        // io.sockets.emit("Server-send-data", data + "888");// gửi về cho tất cả client
+        // socket.broadcast.emit("Server-send-data", data + "888");// gửi về cho tất cả (trừ client vừa emit lên)
+    });
+
 });
 
 http.listen(4444, () => {

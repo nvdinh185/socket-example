@@ -9,5 +9,13 @@ import { Socket } from 'ngx-socket-io';
 export class AppComponent implements OnInit {
   constructor(private socket: Socket) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.socket.on("Server-send-data", data => {
+      alert(data);
+    });
+  }
+
+  onClickSent() {
+    this.socket.emit('Client-send-data', "HELLO");
+  }
 }
