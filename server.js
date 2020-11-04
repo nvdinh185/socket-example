@@ -10,9 +10,17 @@ io.on('connection', socket => {
 
     socket.on("Client-send-data", data => {
         console.log(socket.id + " Vua gui " + data);
-        socket.emit("Server-send-data", data + "888");// chỉ gửi về cho client vừa emit lên
-        // io.sockets.emit("Server-send-data", data + "888");// gửi về cho tất cả client
+        // socket.emit("Server-send-data", data + "888");// chỉ gửi về cho client vừa emit lên
+        io.sockets.emit("Server-send-data", data);// gửi về cho tất cả client
         // socket.broadcast.emit("Server-send-data", data + "888");// gửi về cho tất cả (trừ client vừa emit lên)
+    });
+
+    socket.on("ai do dang go chu", () => {
+        io.sockets.emit("ai do dang go chu");
+    });
+
+    socket.on("ai do ngung go chu", () => {
+        io.sockets.emit("ai do ngung go chu");
     });
 
 });

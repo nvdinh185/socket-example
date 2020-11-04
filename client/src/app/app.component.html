@@ -1,2 +1,6 @@
 <h1>hello</h1>
-<button (click)="onClickSent()">Sent to Server</button>
+<p *ngFor="let msg of arMsg">{{msg}}</p>
+<p>{{msg}}</p>
+<br />
+<input type="text" [(ngModel)]="data" (focus)="onFocusIn($event)" />
+<button (click)="onClickSentData()">OK</button>
